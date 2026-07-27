@@ -1,0 +1,834 @@
+* {margin: 0;padding: 0;box-sizing: border-box;}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    /* FIX: prevents content hiding behind fixed navbar */
+    padding-top: 80px;
+}
+
+/*NAVBAR*/
+
+nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: rgba(60, 49, 49, 0.7);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.logo {
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 30px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+nav ul li a:hover {
+    color: orange;
+}
+
+
+/* HERO SECTION*/
+
+.hero {
+    height: 100vh;
+    background-image: url("https://images.unsplash.com/photo-1524492412937-b28074a5d7da?q=80&w=1200&auto=format&fit=crop");
+    background-size: cover;
+    background-position: center;
+}
+
+.overlay {
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.overlay h1 {
+    color: white;
+    font-size: 60px;
+    margin-bottom: 20px;
+}
+
+.overlay p {
+    color: white;
+    font-size: 22px;
+    margin-bottom: 30px;
+}
+
+
+/* BUTTON */
+
+.btn {
+    background-color: orange;
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 18px;
+}
+
+.btn:hover {
+    background-color: darkorange;
+}
+
+
+/* STATES SECTION*/
+
+.states {
+    padding: 80px 50px;
+    text-align: center;
+    background-color: rgba(227, 204, 222, 0.6);
+}
+
+.states h2 {
+    font-size: 40px;
+    margin-bottom: 40px;
+}
+
+/* FIX: ensure cards wrap properly */
+.card-container {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 400px;
+    height: 300px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    background-size: cover;
+    background-position: center;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card span {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px 20px;
+    border-radius: 50px;
+}
+
+.goa {
+    background-image: url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1600&auto=format&fit=crop");
+}
+
+.mumbai {
+    background-image: url("https://images.unsplash.com/photo-1529253355930-ddbe423a2ac7?q=80&w=1600&auto=format&fit=crop");
+}
+
+.chandigarh {
+    background-image: url("https://chandigarhtourism.in/images/v2/headers/elante-mall-chandigarh-tourism-header.jpg");
+}
+
+
+/* TRAVEL NAVBAR*/
+
+.travel-nav {
+    padding: 60px 10%;
+    background-color: #efdaea;
+    text-align: center;
+}
+
+.travel-nav h2 {
+    font-size: 40px;
+    margin-bottom: 30px;
+}
+
+.travel-nav-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.travel-nav-container a {
+    text-decoration: none;
+    background-color: rgb(238, 140, 200);
+    color: white;
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.travel-nav-container a:hover {
+    background-color: rgb(241, 137, 196);
+    transform: scale(1.05);
+}
+
+
+/* UTILITY SECTIONS */
+
+.utility-section {
+    padding: 80px 10%;
+    text-align: center;
+}
+
+.utility-section h2 {
+    font-size: 40px;
+    margin-bottom: 40px;
+}
+
+.utility-box {
+    width: 400px;
+    margin: auto;
+    padding: 40px;
+    background-color: rgb(246, 164, 210);
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.utility-box input,
+.utility-box select {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    border: 1px solid #dc9cbb;
+    font-size: 16px;
+}
+
+.utility-box button {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    background: rgb(243, 239, 241);
+    color: rgb(18, 17, 17);
+    font-size: 18px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.utility-box button:hover {
+    background: rgb(246, 3, 177);
+    color: white;
+}
+
+.result-box {
+    margin-top: 25px;
+}
+
+.result-box h3 {
+    font-size: 32px;
+}
+
+
+/* EMERGENCY */
+
+.emergency-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.emergency-card {
+    width: 220px;
+    padding: 30px;
+    background: rgb(237, 150, 208);
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+
+/* TIPS*/
+
+.tips-container {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.tip-card {
+    width: 250px;
+    padding: 25px;
+    background: #fff3e6;
+    border-left: 5px solid rgb(216, 151, 193);
+    border-radius: 10px;
+}
+
+/* ABOUT*/
+
+.about {
+    padding: 80px 50px;
+    background-image: url("https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=1200&auto=format&fit=crop");
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    background-blend-mode: darken;
+    line-height: 1.8;
+    font-size: 18px;
+}
+
+.about h2 {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+
+/* CONTACT*/
+
+.contact {
+    padding: 80px 50px;
+    text-align: center;
+    background-image: url("https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?q=80&w=1200&auto=format&fit=crop");
+    background-size: cover;
+    background-position: center;
+    background-color: rgba(0, 0, 0, 0.6);
+    background-blend-mode: darken;
+    color: white;
+}
+
+.contact h2 {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.contact p {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+
+/*  RESPONSIVE - HOMEPAGE*/
+
+@media (max-width: 768px) {
+    nav { padding: 20px; }
+    nav ul { display: none; }
+    .overlay h1 { font-size: 40px; }
+    .utility-box { width: 100%; }
+    .card { width: 100%; }
+}
+
+
+/* STATE PAGES — HERO*/
+
+.state-hero {
+    height: 75vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.goa-hero {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+    url("https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?q=80&w=1200");
+    background-size: cover;
+    background-position: center;
+}
+
+.mumbai-hero {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+    url("https://images.unsplash.com/photo-1570168007204-dfb528c6958f?q=80&w=1200");
+    background-size: cover;
+    background-position: center;
+}
+
+.chandigarh-hero {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+    url("https://s7ap1.scene7.com/is/image/incredibleindia/rock-garden-chandigarh-attr-hero-2?qlt=82&ts=1742163153902");
+    background-size: cover;
+    background-position: center;
+}
+
+.state-overlay {
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 50px 70px;
+    border-radius: 20px;
+    text-align: center;
+    color: white;
+}
+
+.state-overlay h1 {
+    font-size: 70px;
+    margin-bottom: 20px;
+}
+
+.state-overlay p {
+    font-size: 24px;
+}
+
+
+/*  QUICK INFO*/
+
+.quick-info {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    padding: 70px 8%;
+    background-color: #fafafa;
+}
+
+.info-box {
+    width: 260px;
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+}
+
+.info-box:hover {
+    transform: translateY(-8px);
+}
+
+.info-box h3 {
+    font-size: 18px;
+    color: orange;
+    margin-bottom: 10px;
+}
+
+.info-box p {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
+/* STATE SECTION*/
+
+.state-section {
+    padding: 80px 6%;
+    text-align: center;
+}
+
+.state-section h2 {
+    font-size: 40px;
+    margin-bottom: 40px;
+}
+
+
+/* TOUR CARDS*/
+
+.tour-card {
+    width: 320px;
+    background-color: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.tour-card:hover {
+    transform: translateY(-10px);
+}
+
+.tour-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.tour-card h3 {
+    font-size: 22px;
+    margin: 15px 15px 8px;
+}
+
+.tour-card p {
+    font-size: 15px;
+    margin: 0 15px 20px;
+    color: #555;
+    line-height: 1.5;
+}
+
+
+/* FOOD CARDS*/
+
+.food-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.food-card {
+    display: flex;
+    background-color: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.food-card:hover {
+    transform: translateY(-8px);
+}
+
+.food-card img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.food-card-info {
+    padding: 20px;
+    text-align: left;
+}
+
+.food-card-info h3 {
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+.food-card-info p {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.5;
+}
+
+
+/* HOTEL CARDS*/
+
+.hotel-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.hotel-card {
+    width: 100%;
+    background-color: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+    position: relative;
+}
+
+.hotel-card:hover {
+    transform: translateY(-10px);
+}
+
+.hotel-card img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+}
+
+.hotel-price-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: orange;
+    color: white;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.hotel-card-body {
+    padding: 18px;
+}
+
+.hotel-card-body h3 {
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+.hotel-card-body p {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.5;
+}
+
+.hotel-stars {
+    color: orange;
+    font-size: 16px;
+    margin-bottom: 6px;
+}
+
+
+/* HIGHLIGHT BANNER */
+
+.highlight-banner {
+    margin: 0 6% 60px;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    height: 300px;
+}
+
+.highlight-banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.highlight-banner-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(0,0,0,0.6) 40%, transparent);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 50px;
+    color: white;
+}
+
+.highlight-banner-text h3 {
+    font-size: 34px;
+    margin-bottom: 12px;
+}
+
+.highlight-banner-text p {
+    font-size: 16px;
+    max-width: 400px;
+    line-height: 1.6;
+}
+
+
+/*  LIGHTBOX*/
+
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox.active {
+    display: flex;
+}
+
+.lightbox img {
+    max-width: 85vw;
+    max-height: 85vh;
+    border-radius: 10px;
+    object-fit: contain;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: white;
+    font-size: 36px;
+    cursor: pointer;
+}
+
+.lightbox-close:hover {
+    color: orange;
+}
+
+
+/* DARK MODE */
+
+.dark-mode{
+    background-color: #121212;
+    color: white;
+}
+
+.dark-mode nav{
+    background-color: rgba(0,0,0,0.9);
+}
+
+.dark-mode .card{
+    background-color: #1e1e1e;
+    color: white;
+}
+
+.dark-mode section{
+    background-color: #181818;
+}
+
+.dark-mode footer{
+    background-color: black;
+    color: white;
+}
+
+#searchBar{
+    width: 300px;
+    padding: 12px;
+    margin: 20px;
+    border-radius: 8px;
+    border: 1px solid gray;
+    font-size: 16px;
+}
+
+
+/*RESPONSIVE - STATE PAGES */
+
+@media (max-width: 768px) {
+
+    .state-overlay {
+        padding: 30px;
+    }
+
+    .state-overlay h1 {
+        font-size: 40px;
+    }
+
+    .state-overlay p {
+        font-size: 18px;
+    }
+
+    .tour-card {
+        width: 100%;
+        max-width: 380px;
+    }
+
+    .food-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .food-card {
+        flex-direction: column;
+    }
+
+    .food-card img {
+        width: 100%;
+        height: 200px;
+    }
+
+    .hotel-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hotel-card {
+        width: 100%;
+    }
+
+    .info-box {
+        width: 100%;
+        max-width: 320px;
+    }
+
+    .highlight-banner {
+        height: 200px;
+    }
+
+    .highlight-banner-text h3 {
+        font-size: 22px;
+    }
+}
+
+
+/* BOOKING FORM */
+
+.booking-section{
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.booking-form{
+    max-width: 400px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.booking-form input,
+.booking-form select{
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid gray;
+    font-size: 16px;
+}
+
+.booking-form button{
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    background-color: #ff9800;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#bookingMessage{
+    margin-top: 15px;
+    font-weight: bold;
+    color: green;
+}
+
+.rating{
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.star{
+    color: gray;
+    transition: 0.2s;
+}
+
+.star:hover{
+    transform: scale(1.2);
+}
+
+.favorite{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.heart{
+    font-size: 22px;
+    transition: 0.2s;
+}
+
+.favorite:hover .heart{
+    transform: scale(1.2);
+}

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pro Space Dodger - Handtrack Edition</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/handtrackjs/dist/handtrack.min.js"></script>
+</head>
+<body>
+    <div class="hud">
+        <h1>PRO SPACE DODGER</h1>
+        <div id="status">LOADING MODEL...</div>
+        <div id="score">Score: 0</div>
+    </div>
+
+    <div id="camera-container">
+        <video id="video" width="480" height="360" autoplay></video>
+        <canvas id="canvas"></canvas>
+    </div>
+
+    <div id="game-arena">
+        <div id="player">🚀</div>
+        <div id="game-over" class="overlay">
+            <h2>MISSION FAILED</h2>
+            <button onclick="location.reload()">RESTART</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

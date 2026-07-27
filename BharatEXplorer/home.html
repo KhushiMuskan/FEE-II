@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Bharat Explorer</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+
+    <!-- NAVBAR -->
+
+    <nav>
+
+        <div class="logo">
+            BharatExplorer
+        </div>
+
+        <ul>
+
+            <li><a href="#">Home</a></li>
+            <li><a href="#states">States</a></li>
+            <li><a href="#travel">Travel Essentials</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+
+        </ul>
+
+        <button id="themeBtn">🌙 Dark Mode</button>
+
+    </nav>
+
+
+
+    <!-- HERO SECTION -->
+
+    <section class="hero">
+
+        <div class="overlay">
+
+            <h1>Welcome to BharatExplorer</h1>
+
+            <p>
+                Discover the beauty, culture and traditions of India
+            </p>
+
+            <a href="#states" class="btn">
+                Explore States
+            </a>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- STATES SECTION -->
+
+    <section id="states" class="states">
+
+        <h2>Explore States</h2>
+
+        <!-- SEARCH BAR -->
+
+        <input type="text" id="searchBar" placeholder="Search states...">
+
+        <div class="card-container">
+
+            <a href="chandigarh.html" class="card state-card chandigarh">
+
+                <span>Chandigarh</span>
+
+            </a>
+
+            <a href="goa.html" class="card state-card goa">
+
+                <span>Goa</span>
+
+            </a>
+
+            <a href="mumbai.html" class="card state-card mumbai">
+
+                <span>Mumbai</span>
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+
+
+    <!-- TRAVEL ESSENTIALS NAVBAR -->
+
+    <section id="travel" class="travel-nav">
+
+        <h2>Travel Essentials</h2>
+
+        <div class="travel-nav-container">
+
+            <a href="#weather">Weather</a>
+
+            <a href="#currency">Currency</a>
+
+            <a href="#emergency">Emergency</a>
+
+            <a href="#tips">Travel Tips</a>
+
+        </div>
+
+    </section>
+    
+<!-- WEATHER SECTION -->
+
+<section id="weather" class="utility-section">
+
+    <h2>Weather Teller</h2>
+
+    <div class="utility-box">
+
+        <input type="text" id="cityInput" placeholder="Enter City">
+
+        <button id="weatherBtn">Check Weather</button>
+
+        <div id="weatherResult"></div>
+
+    </div>
+
+</section>
+
+
+<!-- CURRENCY SECTION -->
+
+<section id="currency" class="utility-section">
+
+    <h2>Currency Calculator</h2>
+
+    <div class="utility-box">
+
+        <input type="number" id="amount" placeholder="Enter Amount">
+
+        <select id="fromCurrency">
+
+            <option value="USD">USD</option>
+            <option value="EUR">EUR</option>
+            <option value="GBP">GBP</option>
+            <option value="INR">INR</option>
+
+        </select>
+
+        <select id="toCurrency">
+
+            <option value="INR">INR</option>
+            <option value="USD">USD</option>
+            <option value="EUR">EUR</option>
+
+        </select>
+
+        <button id="convertBtn">Convert</button>
+
+        <div class="result-box">
+            <div id="currencyResult">
+                <h3>₹ 0</h3>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+    <!-- EMERGENCY SECTION -->
+
+    <section id="emergency" class="utility-section">
+
+        <h2>Emergency Numbers</h2>
+
+        <div class="emergency-container">
+
+            <div class="emergency-card">
+
+                <h3>Police</h3>
+
+                <p>100</p>
+
+            </div>
+
+            <div class="emergency-card">
+
+                <h3>Ambulance</h3>
+
+                <p>102</p>
+
+            </div>
+
+            <div class="emergency-card">
+
+                <h3>Women Helpline</h3>
+
+                <p>1091</p>
+
+            </div>
+
+            <div class="emergency-card">
+
+                <h3>Tourist Helpline</h3>
+
+                <p>1363</p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- TRAVEL TIPS SECTION -->
+
+    <section id="tips" class="utility-section">
+
+        <h2>Travel Tips</h2>
+
+        <div class="tips-container">
+
+            <div class="tip-card">
+                Carry cash for local markets.
+            </div>
+
+            <div class="tip-card">
+                Respect local traditions and culture.
+            </div>
+
+            <div class="tip-card">
+                Use bottled water while travelling.
+            </div>
+
+            <div class="tip-card">
+                Keep emergency contacts saved.
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ABOUT SECTION -->
+
+    <section id="about" class="about">
+
+        <h2>About BharatExplorer</h2>
+
+        <p>
+
+            BharatExplorer is a tourism platform designed to help travelers
+            discover the beauty, culture, food, traditions and famous places
+            of India. Users can explore different states, learn about tourist
+            attractions, restaurants, hotels, transport facilities and much more.
+            Our goal is to make traveling across India easier and more exciting
+            for tourists and explorers.
+
+        </p>
+
+    </section>
+
+
+
+    <!-- CONTACT SECTION -->
+
+    <section id="contact" class="contact">
+
+        <h2>Contact Us</h2>
+
+        <p>Email: bharatexplorer@gmail.com</p>
+
+        <p>Phone: +91 9876543210</p>
+
+    </section>
+
+
+
+    <!-- JAVASCRIPT FILE -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

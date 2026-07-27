@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Goa - Bharat Explorer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="goa-page">
+
+    <!-- LIGHTBOX -->
+    <div class="lightbox" id="lightbox">
+        <span class="lightbox-close" onclick="closeLightbox()">✕</span>
+        <img id="lightbox-img" src="" alt="">
+    </div>
+
+    <!-- HERO -->
+    <section class="state-hero goa-hero">
+        <div class="state-overlay">
+            <h1>Explore Goa</h1>
+            <p>Beaches, nightlife, seafood and Portuguese culture.</p>
+        </div>
+    </section>
+
+    <!-- QUICK INFO -->
+    <section class="quick-info">
+        <div class="info-box">
+            <h3>Best Time</h3>
+            <p>November – February</p>
+        </div>
+        <div class="info-box">
+            <h3>Famous For</h3>
+            <p>Beaches & Nightlife</p>
+        </div>
+        <div class="info-box">
+            <h3>Budget</h3>
+            <p>₹3000 – ₹10000/day</p>
+        </div>
+    </section>
+
+    <!-- HIGHLIGHT BANNER -->
+    <div class="highlight-banner">
+        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1600&auto=format&fit=crop" alt="Goa coastline">
+        <div class="highlight-banner-text">
+            <h3>Sun, Sand & Soul</h3>
+            <p>Goa's 100 km coastline shelters some of India's most vibrant beaches, from party-packed shores to hidden coves.</p>
+        </div>
+    </div>
+
+    <!-- FAMOUS PLACES -->
+    <section class="state-section">
+        <h2>Famous Places</h2>
+        <div class="accent-line"></div>
+
+        <!-- FIXED: container properly opened -->
+        <div class="card-container">
+
+            <div class="tour-card" onclick="openLightbox('https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?q=80&w=1200')">
+                <span class="card-tag">Beach</span>
+                <img class="tour-card-img" src="https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?q=80&w=800&auto=format&fit=crop" alt="Baga Beach">
+                <h3>Baga Beach</h3>
+                <p>One of Goa's most popular beaches — buzzing with beach shacks, water sports and legendary sunsets.</p>
+            </div>
+            <div class="favorite" data-place="Goa Beach">
+                <span class="heart">🤍</span>
+            </div>
+
+            <div class="tour-card" onclick="openLightbox('https://vl-prod-static.b-cdn.net/system/images/000/684/428/6308e6d0c6136ce47dc710150092620a/original/Dudhsagar-612x612.jpg')">
+                <span class="card-tag">Waterfall</span>
+                <img class="tour-card-img" src="https://vl-prod-static.b-cdn.net/system/images/000/684/428/6308e6d0c6136ce47dc710150092620a/original/Dudhsagar-612x612.jpg" alt="Dudhsagar Falls">
+                <h3>Dudhsagar Falls</h3>
+                <p>A milky four-tiered waterfall plunging 310 m into a lush forest pool.</p>
+            </div>
+            <div class="favorite" data-place="Goa Beach">
+                <span class="heart">🤍</span>
+            </div>
+
+            <div class="tour-card" onclick="openLightbox('https://imkarchitects.com/images/projects/lesuire-hotel/fort-aguada-beach-resort-goa/1.jpg')">
+                <span class="card-tag">Heritage</span>
+                <img class="tour-card-img" src="https://imkarchitects.com/images/projects/lesuire-hotel/fort-aguada-beach-resort-goa/1.jpg" alt="Aguada Fort">
+                <h3>Aguada Fort</h3>
+                <p>A 17th-century Portuguese fort perched at the confluence of the Mandovi and the Arabian Sea.</p>
+            </div>
+            <div class="favorite" data-place="Goa Beach">
+                <span class="heart">🤍</span>
+            </div>
+
+            <div class="tour-card" onclick="openLightbox('https://oneboard.app/_next/static/media/baghabeach.e23ac324.webp')">
+                <span class="card-tag">Beach</span>
+                <img class="tour-card-img" src="https://oneboard.app/_next/static/media/baghabeach.e23ac324.webp" alt="Palolem Beach">
+                <h3>Palolem Beach</h3>
+                <p>A crescent-shaped quiet beach in South Goa, perfect for kayaking and dolphin spotting.</p>
+            </div>
+            <div class="favorite" data-place="Goa Beach">
+                <span class="heart">🤍</span>
+            </div>
+
+            <div class="tour-card" onclick="openLightbox('https://www.tourmyindia.com/states/goa/image/basilica-of-bom-jesus-goa.webp')">
+                <span class="card-tag">Church</span>
+                <img class="tour-card-img" src="https://www.tourmyindia.com/states/goa/image/basilica-of-bom-jesus-goa.webp" alt="Basilica of Bom Jesus">
+                <h3>Basilica of Bom Jesus</h3>
+                <p>A UNESCO World Heritage church housing the remains of St. Francis Xavier.</p>
+            </div>
+            <div class="favorite" data-place="Goa Beach">
+                <span class="heart">🤍</span>
+            </div>
+
+        </div>
+        <!-- FIXED: container properly closed -->
+    </section>
+
+    <!-- LOCAL FOOD -->
+    <section class="state-section">
+        <h2>Local Food</h2>
+        <div class="accent-line"></div>
+
+        <div class="food-grid">
+
+            <div class="food-card" onclick="openLightbox('https://kitchenfables.com/wp-content/uploads/2016/04/goan-fish-curry.1024x1024-2.jpg')">
+                <img src="https://kitchenfables.com/wp-content/uploads/2016/04/goan-fish-curry.1024x1024-2.jpg" alt="Fish Curry">
+                <div class="food-card-info">
+                    <h3>Fish Curry Rice</h3>
+                    <p>The soul of Goan cuisine — tangy kokum-based curry with fresh catch, served over steamed rice.</p>
+                </div>
+            </div>
+
+            <div class="food-card" onclick="openLightbox('https://www.thespruceeats.com/thmb/IWveLrjAPqPfYTM0_lwiaEv4Df0=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/goan-prawn-balchao-1957451-hero-01-91d750c35f6545269350a483ef61b90f.jpg')">
+                <img src="https://www.thespruceeats.com/thmb/IWveLrjAPqPfYTM0_lwiaEv4Df0=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/goan-prawn-balchao-1957451-hero-01-91d750c35f6545269350a483ef61b90f.jpg" alt="Prawn Balchão">
+                <div class="food-card-info">
+                    <h3>Prawn Balchão</h3>
+                    <p>A fiery tangy prawn pickle that is unmistakably Portuguese-Goan in origin.</p>
+                </div>
+            </div>
+
+            <div class="food-card" onclick="openLightbox('https://ychef.files.bbci.co.uk/1280x720/p0gjfcls.jpg')">
+                <img src="https://ychef.files.bbci.co.uk/1280x720/p0gjfcls.jpg" alt="Bebinca">
+                <div class="food-card-info">
+                    <h3>Bebinca</h3>
+                    <p>Goa's famous layered dessert made from coconut milk and eggs — a celebration on a plate.</p>
+                </div>
+            </div>
+
+            <div class="food-card" onclick="openLightbox('https://bongong.com/images/recipes/Goa_Sausages_(Choris)/Goa%20Sausages_1151023070.main.jpg')">
+                <img src="https://bongong.com/images/recipes/Goa_Sausages_(Choris)/Goa%20Sausages_1151023070.main.jpg" alt="Goan Sausages">
+                <div class="food-card-info">
+                    <h3>Goan Sausages</h3>
+                    <p>Spiced pork sausages with a smoky, tangy kick — best enjoyed with pão bread.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- HOTELS -->
+    <section class="state-section">
+        <h2>Hotels & Resorts</h2>
+        <div class="accent-line"></div>
+
+        <div class="hotel-grid">
+            <!-- unchanged content -->
+        </div>
+    </section>
+
+    <!-- HOTEL BOOKING SECTION -->
+    <section class="booking-section">
+        <h2>Book Your Hotel</h2>
+
+        <div class="booking-form">
+            <input type="text" id="name" placeholder="Enter Your Name">
+            <input type="text" id="hotelName" placeholder="Enter Hotel Name">
+
+            <label>Check-in Date</label>
+            <input type="date" id="checkin">
+
+            <label>Check-out Date</label>
+            <input type="date" id="checkout">
+
+            <select id="room">
+                <option value="">Select Room Type</option>
+                <option>Single Room</option>
+                <option>Double Room</option>
+                <option>Luxury Suite</option>
+            </select>
+
+            <button id="bookBtn">Book Now</button>
+
+            <div id="bookingMessage"></div>
+        </div>
+    </section>
+
+    <div class="rating" data-place="Goa Beach">
+        <span class="star">☆</span>
+        <span class="star">☆</span>
+        <span class="star">☆</span>
+        <span class="star">☆</span>
+        <span class="star">☆</span>
+    </div>
+
+    <p class="rating-text"></p>
+
+    <script src="script.js"></script>
+</body>
+</html>

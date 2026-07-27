@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mumbai - Bharat Explorer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="mumbai-page">
+
+    <!-- LIGHTBOX -->
+    <div class="lightbox" id="lightbox">
+        <span class="lightbox-close" onclick="closeLightbox()">✕</span>
+        <img id="lightbox-img" src="" alt="">
+    </div>
+
+    <!-- HERO -->
+    <section class="state-hero mumbai-hero">
+        <div class="state-overlay">
+            <h1>Explore Mumbai</h1>
+            <p>The city of dreams and Bollywood.</p>
+        </div>
+    </section>
+
+    <!-- QUICK INFO -->
+    <section class="quick-info">
+        <div class="info-box">
+            <h3>Best Time</h3>
+            <p>October – March</p>
+        </div>
+        <div class="info-box">
+            <h3>Famous For</h3>
+            <p>Bollywood & Marine Drive</p>
+        </div>
+        <div class="info-box">
+            <h3>Budget</h3>
+            <p>₹4000 – ₹12000/day</p>
+        </div>
+    </section>
+
+    <!-- HIGHLIGHT BANNER -->
+    <div class="highlight-banner">
+        <img src="https://images.unsplash.com/photo-1529253355930-ddbe423a2ac7?q=80&w=1600&auto=format&fit=crop" alt="Mumbai skyline">
+        <div class="highlight-banner-text">
+            <h3>Maximum City, Infinite Stories</h3>
+            <p>From colonial heritage and Art Deco boulevards to neon-lit street stalls — Mumbai never sleeps and never stops surprising.</p>
+        </div>
+    </div>
+
+    <!-- FAMOUS PLACES -->
+    <section class="state-section">
+        <h2>Famous Places</h2>
+        <div class="accent-line"></div>
+
+        <!-- FIXED CONTAINER -->
+        <div class="card-container">
+
+            <div class="tour-card" onclick="openLightbox('https://images.unsplash.com/photo-1570168007204-dfb528c6958f?q=80&w=1200')">
+                <span class="card-tag">Landmark</span>
+                <img class="tour-card-img" src="https://images.unsplash.com/photo-1570168007204-dfb528c6958f?q=80&w=800&auto=format&fit=crop" alt="Gateway of India">
+                <h3>Gateway of India</h3>
+                <p>The iconic 26-metre arch built in 1924 overlooking the Arabian Sea — Mumbai's most beloved landmark.</p>
+            </div>
+            <div class="favorite" data-place="Goa Beach">
+                <span class="heart">🤍</span>
+            </div>
+
+            <div class="tour-card" onclick="openLightbox('https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0d/40/ce/c3/mumbai-marine-drive-along.jpg?w=900&h=-1&s=1')">
+                <span class="card-tag">Promenade</span>
+                <img class="tour-card-img" src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0d/40/ce/c3/mumbai-marine-drive-along.jpg?w=900&h=-1&s=1" alt="Marine Drive">
+                <h3>Marine Drive</h3>
+                <p>Mumbai's glamorous seafront boulevard — a 3.6 km arc of Art Deco buildings known as the Queen's Necklace at night.</p>
+            </div>
+            <div class="favorite" data-place="Goa Beach">
+                <span class="heart">🤍</span>
+            </div>
+
+            <div class="tour-card" onclick="openLightbox('https://tripstheworld.com/wp-content/uploads/2025/09/Juhu-Beach-Mumbai-Maharashtra.jpg')">
+                <span class="card-tag">Beach</span>
+                <img class="tour-card-img" src="https://tripstheworld.com/wp-content/uploads/2025/09/Juhu-Beach-Mumbai-Maharashtra.jpg" alt="Juhu Beach">
+                <h3>Juhu Beach</h3>
+                <p>Bollywood's favourite stretch of sand — come for street food, sunsets and the chance to spot a film star.</p>
+            </div>
+            <div class="favorite" data-place="Goa Beach">
+                <span class="heart">🤍</span>
+            </div>
+
+            <div class="tour-card" onclick="openLightbox('https://cdn.britannica.com/39/100339-050-0FE7BB19/Chhatrapati-Shivaji-Terminus-Mumbai-India-UNESCO-World-2004.jpg')">
+                <span class="card-tag">Heritage</span>
+                <img class="tour-card-img" src="https://cdn.britannica.com/39/100339-050-0FE7BB19/Chhatrapati-Shivaji-Terminus-Mumbai-India-UNESCO-World-2004.jpg" alt="Chhatrapati Shivaji Terminus">
+                <h3>Chhatrapati Shivaji Terminus</h3>
+                <p>A UNESCO World Heritage Victorian-Gothic railway station and Mumbai's most photographed building.</p>
+            </div>
+            <div class="favorite" data-place="Goa Beach">
+                <span class="heart">🤍</span>
+            </div>
+
+            <div class="tour-card" onclick="openLightbox('https://media-cdn.tripadvisor.com/media/attractions-splice-spp-674x446/06/6a/d2/4e.jpg')">
+                <span class="card-tag">Island</span>
+                <img class="tour-card-img" src="https://media-cdn.tripadvisor.com/media/attractions-splice-spp-674x446/06/6a/d2/4e.jpg" alt="Elephanta Caves">
+                <h3>Elephanta Caves</h3>
+                <p>Ancient rock-cut temples on an island accessible by ferry, famous for the majestic Trimurti sculpture.</p>
+            </div>
+            <div class="favorite" data-place="Goa Beach">
+                <span class="heart">🤍</span>
+            </div>
+
+        </div>
+        <!-- FIXED CONTAINER CLOSED -->
+    </section>
+
+    <!-- STREET FOOD -->
+    <section class="state-section">
+        <h2>Street Food</h2>
+        <div class="accent-line"></div>
+
+        <div class="food-grid">
+
+            <div class="food-card" onclick="openLightbox('https://images.unsplash.com/photo-1606491956689-2ea866880c84?q=80&w=1200')">
+                <img src="https://images.unsplash.com/photo-1606491956689-2ea866880c84?q=80&w=400&auto=format&fit=crop" alt="Pav Bhaji">
+                <div class="food-card-info">
+                    <h3>Pav Bhaji</h3>
+                    <p>A buttery mixed-vegetable mash served with toasted bread rolls — the king of Mumbai street food.</p>
+                </div>
+            </div>
+
+            <div class="food-card" onclick="openLightbox('https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_960,w_960//InstamartAssets/Receipes/schezwan_vada_pav.webp')">
+                <img src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_960,w_960//InstamartAssets/Receipes/schezwan_vada_pav.webp" alt="Vada Pav">
+                <div class="food-card-info">
+                    <h3>Vada Pav</h3>
+                    <p>Mumbai's beloved street burger — a spiced potato fritter inside a soft bun with chutneys.</p>
+                </div>
+            </div>
+
+            <div class="food-card" onclick="openLightbox('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTApExxKR63gJIhcjQ-hMSdUDOM4RjBKbU5JA&s')">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTApExxKR63gJIhcjQ-hMSdUDOM4RjBKbU5JA&s" alt="Bhel Puri">
+                <div class="food-card-info">
+                    <h3>Bhel Puri</h3>
+                    <p>Puffed rice tossed with tamarind chutney, onions and coriander — best enjoyed at Chowpatty Beach.</p>
+                </div>
+            </div>
+
+            <div class="food-card" onclick="openLightbox('https://i.ytimg.com/vi/JKX58rOldgs/maxresdefault.jpg')">
+                <img src="https://i.ytimg.com/vi/JKX58rOldgs/maxresdefault.jpg" alt="Keema Pav">
+                <div class="food-card-info">
+                    <h3>Keema Pav</h3>
+                    <p>Spiced minced meat curry served with soft bread rolls — a Colaba classic since the 1950s.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- HOTELS -->
+    <section class="state-section">
+        <h2>Hotels</h2>
+        <div class="accent-line"></div>
+
+        <div class="hotel-grid">
+
+            <div class="hotel-card">
+                <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=800&auto=format&fit=crop" alt="Luxury Bay Hotel">
+                <span class="hotel-price-badge">₹9500/night</span>
+                <div class="hotel-card-body">
+                    <div class="hotel-stars">★★★★★</div>
+                    <h3>Luxury Bay Hotel</h3>
+                    <p>Iconic property overlooking the Gateway of India with harbour views and world-class dining.</p>
+                </div>
+            </div>
+
+            <div class="hotel-card">
+                <img src="https://images.unsplash.com/photo-1564501049412-61c2a3083791?q=80&w=800&auto=format&fit=crop" alt="City Palace Stay">
+                <span class="hotel-price-badge">₹7000/night</span>
+                <div class="hotel-card-body">
+                    <div class="hotel-stars">★★★★</div>
+                    <h3>City Palace Stay</h3>
+                    <p>Art Deco inspired hotel in the heart of South Mumbai, walking distance to Marine Drive.</p>
+                </div>
+            </div>
+
+            <div class="hotel-card">
+                <img src="https://images.unsplash.com/photo-1568084680786-a84f91d1153c?q=80&w=800&auto=format&fit=crop" alt="Bandra Boutique">
+                <span class="hotel-price-badge">₹5500/night</span>
+                <div class="hotel-card-body">
+                    <div class="hotel-stars">★★★★</div>
+                    <h3>Bandra Boutique Hotel</h3>
+                    <p>Stylish stay in Mumbai's hippest neighbourhood with rooftop bar and sea views.</p>
+                </div>
+            </div>
+
+            <div class="hotel-card">
+                <img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?q=80&w=800&auto=format&fit=crop" alt="Colaba Heritage Inn">
+                <span class="hotel-price-badge">₹3500/night</span>
+                <div class="hotel-card-body">
+                    <div class="hotel-stars">★★★</div>
+                    <h3>Colaba Heritage Inn</h3>
+                    <p>Budget-friendly heritage guesthouse in Mumbai's most atmospheric colonial quarter.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- HOTEL BOOKING SECTION -->
+    <section class="booking-section">
+
+        <h2>Book Your Hotel</h2>
+
+        <div class="booking-form">
+
+            <input type="text" id="name" placeholder="Enter Your Name">
+            <input type="text" id="hotelName" placeholder="Enter Hotel Name">
+
+            <label>Check-in Date</label>
+            <input type="date" id="checkin">
+
+            <label>Check-out Date</label>
+            <input type="date" id="checkout">
+
+            <select id="room">
+                <option value="">Select Room Type</option>
+                <option>Single Room</option>
+                <option>Double Room</option>
+                <option>Luxury Suite</option>
+            </select>
+
+            <button id="bookBtn">Book Now</button>
+
+            <div id="bookingMessage"></div>
+
+        </div>
+
+    </section>
+
+    <div class="rating" data-place="Goa Beach">
+        <span class="star">☆</span>
+        <span class="star">☆</span>
+        <span class="star">☆</span>
+        <span class="star">☆</span>
+        <span class="star">☆</span>
+    </div>
+
+    <p class="rating-text"></p>
+
+    <script src="script.js"></script>
+</body>
+</html>

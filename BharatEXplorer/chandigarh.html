@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chandigarh - Bharat Explorer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="chandigarh-page">
+
+
+    <!-- LIGHTBOX -->
+    <div class="lightbox" id="lightbox">
+        <span class="lightbox-close" onclick="closeLightbox()">✕</span>
+        <img id="lightbox-img" src="" alt="">
+    </div>
+
+    <!-- HERO -->
+    <section class="state-hero chandigarh-hero">
+        <div class="state-overlay">
+            <h1>Explore Chandigarh</h1>
+            <p>India's most beautiful planned city.</p>
+        </div>
+    </section>
+
+    <!-- QUICK INFO -->
+    <section class="quick-info">
+        <div class="info-box">
+            <h3>Best Time</h3>
+            <p>September – March</p>
+        </div>
+        <div class="info-box">
+            <h3>Famous For</h3>
+            <p>Gardens & Architecture</p>
+        </div>
+        <div class="info-box">
+            <h3>Budget</h3>
+            <p>₹2500 – ₹8000/day</p>
+        </div>
+    </section>
+
+    <!-- HIGHLIGHT BANNER -->
+    <div class="highlight-banner">
+        <img src="https://chandigarhtourism.in/images/v2/headers/elante-mall-chandigarh-tourism-header.jpg" alt="Chandigarh cityscape">
+        <div class="highlight-banner-text">
+            <h3>The City Beautiful</h3>
+            <p>Designed by Le Corbusier, Chandigarh blends modernist architecture with lush green boulevards and a serene lakeside.</p>
+        </div>
+    </div>
+
+    <!-- FAMOUS PLACES -->
+    <section class="state-section">
+        <h2>Famous Places</h2>
+        <div class="accent-line"></div>
+
+        <!-- FIXED CONTAINER -->
+        <div class="card-container">
+
+            <div class="tour-card" onclick="openLightbox('https://s7ap1.scene7.com/is/image/incredibleindia/rock-garden-chandigarh-attr-hero-2?qlt=82&ts=1742163153902')">
+                <span class="card-tag">Landmark</span>
+                <img class="tour-card-img" src="https://s7ap1.scene7.com/is/image/incredibleindia/rock-garden-chandigarh-attr-hero-2?qlt=82&ts=1742163153902" alt="Rock Garden">
+                <h3>Rock Garden</h3>
+                <p>Nek Chand's extraordinary 40-acre sculpture park crafted entirely from industrial and urban waste materials.</p>
+            </div>
+            <div class="favorite" data-place="Goa Beach">
+                <span class="heart">🤍</span>
+            </div>
+
+            <div class="tour-card" onclick="openLightbox('https://s7ap1.scene7.com/is/image/incredibleindia/sukhna-lake-chandigarh-chandigarh-2-attr-hero?qlt=82&ts=1742194189957')">
+                <span class="card-tag">Nature</span>
+                <img class="tour-card-img" src="https://s7ap1.scene7.com/is/image/incredibleindia/sukhna-lake-chandigarh-chandigarh-2-attr-hero?qlt=82&ts=1742194189957" alt="Sukhna Lake">
+                <h3>Sukhna Lake</h3>
+                <p>A man-made reservoir at the foothills of the Himalayas — perfect for morning walks and paddleboating.</p>
+            </div>
+            <div class="favorite" data-place="Goa Beach">
+                <span class="heart">🤍</span>
+            </div>
+
+            <div class="tour-card" onclick="openLightbox('https://www.newotani.co.jp/fileadmin/res/en/tokyo/offers/rosegarden/kv_01.jpg')">
+                <span class="card-tag">Garden</span>
+                <img class="tour-card-img" src="https://www.newotani.co.jp/fileadmin/res/en/tokyo/offers/rosegarden/kv_01.jpg" alt="Rose Garden">
+                <h3>Rose Garden</h3>
+                <p>Asia's largest rose garden covering 30 acres with over 1600 species — spectacular in February.</p>
+            </div>
+            <div class="favorite" data-place="Goa Beach">
+                <span class="heart">🤍</span>
+            </div>
+
+            <div class="tour-card" onclick="openLightbox('https://upload.wikimedia.org/wikipedia/commons/1/1a/Palace_of_Assembly_Chandigarh_2006.jpg')">
+                <span class="card-tag">Architecture</span>
+                <img class="tour-card-img" src="https://upload.wikimedia.org/wikipedia/commons/1/1a/Palace_of_Assembly_Chandigarh_2006.jpg" alt="Capitol Complex">
+                <h3>Capitol Complex</h3>
+                <p>A UNESCO World Heritage Site — Le Corbusier's masterpiece of modernist civic architecture.</p>
+            </div>
+            <div class="favorite" data-place="Goa Beach">
+                <span class="heart">🤍</span>
+            </div>
+
+            <div class="tour-card" onclick="openLightbox('https://chdlife.com/wp-content/uploads/2024/04/Leisure-Valley-Chandigarh.webp')">
+                <span class="card-tag">Leisure</span>
+                <img class="tour-card-img" src="https://chdlife.com/wp-content/uploads/2024/04/Leisure-Valley-Chandigarh.webp" alt="Leisure Valley">
+                <h3>Leisure Valley</h3>
+                <p>A 8 km continuous green belt of themed gardens running through the heart of the city.</p>
+            </div>
+            <div class="favorite" data-place="Goa Beach">
+                <span class="heart">🤍</span>
+            </div>
+
+        </div>
+        <!-- FIXED CONTAINER CLOSED -->
+    </section>
+
+    <!-- LOCAL FOOD -->
+    <section class="state-section">
+        <h2>Local Food</h2>
+        <div class="accent-line"></div>
+
+        <div class="food-grid">
+
+            <div class="food-card" onclick="openLightbox('https://www.indianhealthyrecipes.com/wp-content/uploads/2020/08/aloo-paratha-recipe-500x500.jpg')">
+                <img src="https://www.indianhealthyrecipes.com/wp-content/uploads/2020/08/aloo-paratha-recipe-500x500.jpg" alt="Stuffed Paratha">
+                <div class="food-card-info">
+                    <h3>Stuffed Paratha</h3>
+                    <p>Flaky whole-wheat bread stuffed with spiced potato or paneer, served with white butter and pickle.</p>
+                </div>
+            </div>
+
+            <div class="food-card" onclick="openLightbox('https://cdn.uengage.io/uploads/28289/image-NL5L9Q-1769878569.png')">
+                <img src="https://cdn.uengage.io/uploads/28289/image-NL5L9Q-1769878569.png" alt="Chole Bhature">
+                <div class="food-card-info">
+                    <h3>Chole Bhature</h3>
+                    <p>Spiced chickpea curry paired with fluffy deep-fried bread — a Chandigarh breakfast staple.</p>
+                </div>
+            </div>
+
+            <div class="food-card" onclick="openLightbox('https://i.ytimg.com/vi/2OXEhpB_d5E/maxresdefault.jpg')">
+                <img src="https://i.ytimg.com/vi/2OXEhpB_d5E/maxresdefault.jpg" alt="Lassi">
+                <div class="food-card-info">
+                    <h3>Punjabi Lassi</h3>
+                    <p>Thick, creamy yogurt drink topped with a dollop of homemade butter — best at Sector 17.</p>
+                </div>
+            </div>
+
+            <div class="food-card" onclick="openLightbox('https://images.unsplash.com/photo-1565557623262-b51c2513a641?q=80&w=1200')">
+                <img src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?q=80&w=400&auto=format&fit=crop" alt="Butter Chicken">
+                <div class="food-card-info">
+                    <h3>Butter Chicken</h3>
+                    <p>Creamy tomato-based chicken curry — one of Punjab's most iconic and beloved dishes.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- HOTELS -->
+    <section class="state-section">
+        <h2>Hotels</h2>
+        <div class="accent-line"></div>
+
+        <div class="hotel-grid">
+
+            <div class="hotel-card">
+                <img src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?q=80&w=800&auto=format&fit=crop" alt="Garden View Hotel">
+                <span class="hotel-price-badge">₹5000/night</span>
+                <div class="hotel-card-body">
+                    <div class="hotel-stars">★★★★</div>
+                    <h3>Garden View Hotel</h3>
+                    <p>Centrally located hotel overlooking a leafy sector garden with modern amenities and a rooftop café.</p>
+                </div>
+            </div>
+
+            <div class="hotel-card">
+                <img src="https://images.unsplash.com/photo-1615460549969-36fa19521a4f?q=80&w=800&auto=format&fit=crop" alt="Lake Side Inn">
+                <span class="hotel-price-badge">₹6500/night</span>
+                <div class="hotel-card-body">
+                    <div class="hotel-stars">★★★★</div>
+                    <h3>Lake Side Inn</h3>
+                    <p>A peaceful retreat steps from Sukhna Lake, with lake-facing rooms and a serene garden courtyard.</p>
+                </div>
+            </div>
+
+            <div class="hotel-card">
+                <img src="https://images.unsplash.com/photo-1578683010236-d716f9a3f461?q=80&w=800&auto=format&fit=crop" alt="Le Corbusier Boutique">
+                <span class="hotel-price-badge">₹8000/night</span>
+                <div class="hotel-card-body">
+                    <div class="hotel-stars">★★★★★</div>
+                    <h3>Le Corbusier Boutique</h3>
+                    <p>Heritage stay inspired by the city's founding architect, featuring modernist interiors and curated art.</p>
+                </div>
+            </div>
+
+            <div class="hotel-card">
+                <img src="https://images.unsplash.com/photo-1586611292717-f828b167408c?q=80&w=800&auto=format&fit=crop" alt="Rock Nest Stay">
+                <span class="hotel-price-badge">₹3800/night</span>
+                <div class="hotel-card-body">
+                    <div class="hotel-stars">★★★</div>
+                    <h3>Rock Nest Stay</h3>
+                    <p>Budget-friendly guesthouse near the Rock Garden with cheerful rooms and hearty Punjabi breakfasts.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- HOTEL BOOKING SECTION -->
+    <section class="booking-section">
+
+        <h2>Book Your Hotel</h2>
+
+        <div class="booking-form">
+
+            <input type="text" id="name" placeholder="Enter Your Name">
+
+            <input type="text" id="hotelName" placeholder="Enter Hotel Name">
+
+            <label>Check-in Date</label>
+            <input type="date" id="checkin">
+
+            <label>Check-out Date</label>
+            <input type="date" id="checkout">
+
+            <select id="room">
+                <option value="">Select Room Type</option>
+                <option>Single Room</option>
+                <option>Double Room</option>
+                <option>Luxury Suite</option>
+            </select>
+
+            <button id="bookBtn">Book Now</button>
+
+            <div id="bookingMessage"></div>
+
+        </div>
+
+    </section>
+
+    <div class="rating" data-place="Goa Beach">
+        <span class="star">☆</span>
+        <span class="star">☆</span>
+        <span class="star">☆</span>
+        <span class="star">☆</span>
+        <span class="star">☆</span>
+    </div>
+
+    <p class="rating-text"></p>
+
+    <script src="script.js"></script>
+</body>
+</html>
