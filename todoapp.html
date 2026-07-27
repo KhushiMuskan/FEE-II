@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Task Scheduler</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#f772c4,#e1c3d9);
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:30px;
+}
+
+.container{
+    width:900px;
+    max-width:100%;
+    background:white;
+    border-radius:15px;
+    padding:25px;
+    box-shadow:0 10px 30px rgba(0,0,0,.2);
+}
+
+h1{
+    text-align:center;
+    margin-bottom:25px;
+    color:#333;
+}
+
+.input-section{
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr 1fr auto;
+    gap:10px;
+    margin-bottom:25px;
+}
+
+.input-section input,
+.input-section select{
+    padding:12px;
+    border:1px solid #ccc;
+    border-radius:8px;
+    font-size:15px;
+}
+
+.input-section button{
+    background:pink;
+    color:white;
+    border:none;
+    padding:12px 20px;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:15px;
+}
+
+.input-section button:hover{
+    background:#f405b4;
+}
+
+.task{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:#f8f9fa;
+    padding:15px;
+    border-radius:10px;
+    margin-bottom:12px;
+    transition:.3s;
+}
+
+.task:hover{
+    transform:translateY(-2px);
+}
+
+.left{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.left input{
+    width:20px;
+    height:20px;
+}
+
+.task.completed .task-name{
+    text-decoration:line-through;
+    color:gray;
+}
+
+.task-name{
+    font-size:17px;
+    font-weight:bold;
+}
+
+.details{
+    font-size:13px;
+    color:#666;
+    margin-top:4px;
+}
+
+.priority{
+    padding:4px 10px;
+    border-radius:20px;
+    color:white;
+    font-size:12px;
+}
+
+.low{
+    background:green;
+}
+
+.medium{
+    background:orange;
+}
+
+.high{
+    background:red;
+}
+
+.delete-btn{
+    background:red;
+    color:white;
+    border:none;
+    padding:8px 12px;
+    border-radius:6px;
+    cursor:pointer;
+}
+
+.delete-btn:hover{
+    background:darkred;
+}
+
+.empty{
+    text-align:center;
+    color:#777;
+    margin-top:20px;
+}
+
+@media(max-width:750px){
+
+.input-section{
+    grid-template-columns:1fr;
+}
+
+.task{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:10px;
+}
+
+}
+
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+<h1>TO DO</h1>
+
+<div class="input-section">
+
+<input type="text" id="taskInput" placeholder="Enter Task">
+
+<input type="date" id="date">
+
+<input type="time" id="time">
+
+<select id="priority">
+<option value="Low">Low</option>
+<option value="Medium">Medium</option>
+<option value="High">High</option>
+</select>
+
+<button onclick="addTask()">Add</button>
+
+</div>
+
+<div id="taskList"></div>
+
+</div>
+
+<script>
+
+let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+
+displayTasks();
+
+function addTask(){
+
+const taskInput=document.getElementById("taskInput");
+const date=document.getElementById("date");
+const time=document.getElementById("time");
+const priority=document.getElementById("priority");
+
+if(taskInput.value.trim()==""){
+alert("Please enter a task");
+return;
+}
+
+tasks.push({
+
+name:taskInput.value,
+date:date.value,
+time:time.value,
+priority:priority.value,
+completed:false
+
+});
+
+saveTasks();
+
+taskInput.value="";
+date.value="";
+time.value="";
+priority.value="Low";
+
+displayTasks();
+
+}
+
+function displayTasks(){
+
+const taskList=document.getElementById("taskList");
+
+taskList.innerHTML="";
+
+if(tasks.length==0){
+
+taskList.innerHTML="<p class='empty'>No Tasks Available</p>";
+return;
+
+}
+
+tasks.sort((a,b)=>{
+
+return new Date(a.date+" "+a.time)-new Date(b.date+" "+b.time);
+
+});
+
+tasks.forEach((task,index)=>{
+
+const div=document.createElement("div");
+
+div.className="task";
+
+if(task.completed)
+div.classList.add("completed");
+
+let color="low";
+
+if(task.priority=="Medium")
+color="medium";
+
+if(task.priority=="High")
+color="high";
+
+div.innerHTML=`
+
+<div class="left">
+
+<input type="checkbox"
+${task.completed?"checked":""}
+onchange="toggleTask(${index})">
+
+<div>
+
+<div class="task-name">${task.name}</div>
+
+<div class="details">
+
+📅 ${task.date || "No Date"}
+
+&nbsp;&nbsp;
+
+⏰ ${task.time || "No Time"}
+
+&nbsp;&nbsp;
+
+<span class="priority ${color}">
+${task.priority}
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+<button class="delete-btn"
+onclick="deleteTask(${index})">
+Delete
+</button>
+
+`;
+
+taskList.appendChild(div);
+
+});
+
+}
+
+function toggleTask(index){
+
+tasks[index].completed=!tasks[index].completed;
+
+saveTasks();
+
+displayTasks();
+
+}
+
+function deleteTask(index){
+
+tasks.splice(index,1);
+
+saveTasks();
+
+displayTasks();
+
+}
+
+function saveTasks(){
+
+localStorage.setItem("tasks",JSON.stringify(tasks));
+
+}
+
+</script>
+
+</body>
+</html>

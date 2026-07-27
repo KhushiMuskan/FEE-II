@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Application Form</title>
+</head>
+<body bgcolor="palevioletred">
+    <h1 align="center" style="color:darkred;">Application Form</h1>
+    <hr color="blue" size="3">
+
+    <form>
+        <label>First Name:</label>
+        <input type="text" name="fname" placeholder="name"><br><br>
+
+        <label>Last Name:</label>
+        <input type="text" name="lname"><br><br>
+
+        <label>Password:</label>
+        <input type="password" name="password"><br><br>
+
+
+        <label>Comments:</label><br>
+        <textarea name="comments" rows="4" cols="30" placeholder="enter comments"></textarea><br><br>
+
+        <label>Language</label><br>
+        <input type="checkbox" name="lang" value="Hindi"> Hindi
+        <input type="checkbox" name="lang" value="English"> English
+        <input type="checkbox" name="lang" value="Punjabi"> Punjabi
+        <br><br>
+
+        <label>Gender:</label>
+        <input type="radio" name="gender" value="Male"> Male
+        <input type="radio" name="gender" value="Female"> Female
+        <br><br>
+
+        <label>Select fruit:</label>
+        <select name="fruit">
+            <option>--select--</option>
+            <option>Apple</option>
+            <option>Mango</option>
+            <option>Banana</option>
+            <option>Orange</option>
+        </select>
+        <br><br>
+
+        <label>Select Resume</label>
+        <input type="file" name="resume">
+        <br><br>
+
+        <input type="submit" value="REGISTER">
+        <input type="reset" value="Reset">
+        <input type="button" value="OK">
+    </form>
+</body>
+</html>

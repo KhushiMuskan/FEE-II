@@ -1,0 +1,102 @@
+*{
+    padding:0px;
+    margin: 0px;
+    box-sizing: border-box;
+
+}
+html{
+    font-size: 16px;
+}
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background-color: beige;
+    padding: 1rem 3rem;
+}
+body{
+background: #39675b;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #99f2c8, #3e7264);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #99f2c8, #2d6e5d); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+min-height: 100vh;
+overflow: hidden;
+}
+ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style-type:none;
+    text-decoration: none;
+    gap:1rem;
+}
+a{
+    text-decoration: none;
+}
+a:hover{
+    color:rgb(83, 67, 186);
+}
+.notification{
+    position: relative;
+    font-size: 1.5rem;
+
+}
+.number{
+    font-size: 0.8rem;
+    width:1.5rem;
+    height: 1.5rem;
+    background-color: rgb(167, 80, 172);
+    border-radius: 50%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    position:absolute;
+    top:-8px;
+    right:-8px;
+   
+    
+}
+.center{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.login-card{
+    width:22rem;
+    padding: 2rem;
+    height:25rem;
+    backdrop-filter: blur(10px);
+    background-color: rgb(224, 142, 183);
+    box-shadow: 0 5px 20px rgba(17, 16, 16, 0.2);
+    border:2px solid rgb(240, 235, 235);
+
+}
+.container{
+    height: 90vh;
+}
+input{
+    width: 100%;
+    padding:12px;
+    margin:10px 0;
+    border:none;
+    border-radius: 8px;
+    outline:none;
+}
+button{
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius:8px;
+    color:rgb(29, 31, 28);
+    /* cursor:pointer; */
+    background-color: rgb(186, 225, 247);
+    margin-top:10px;
+}
+button:hover{
+    background-color: rgb(189, 175, 175);
+}
+.cross{
+    position:absolute;
+    top:1rem;
+    left: 19rem ;
+
+}
