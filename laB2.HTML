@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Beauty Hub</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: #fff0f5;
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 40px;
+    background: white;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #e91e63;
+}
+
+/* WHITE HEADING BAR */
+.heading-bar {
+    text-align: center;
+    padding: 30px 20px;
+    background: white;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.heading-bar h2 {
+    font-size: 34px;
+    margin: 0;
+    background: linear-gradient(45deg, #e91e63, #c2185b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.heading-bar p {
+    color: #555;
+    margin-top: 8px;
+}
+
+/* OFFER BANNER */
+.offer-banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px;
+    background: linear-gradient(to right, #c9b6ff, #f3cfa0);
+    margin: 20px;
+    border-radius: 15px;
+}
+
+.offer-text h1 {
+    font-size: 50px;
+    color: #2c1a72;
+}
+
+.offer-text h2 {
+    font-family: cursive;
+    color: #2c1a72;
+}
+
+.offer-image img {
+    width: 400px;
+    max-width: 100%;
+}
+
+/* PRODUCTS */
+.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.product {
+    background: white;
+    padding: 15px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+.product img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+/* QTY */
+.qty-bar {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 10px 0;
+}
+
+.qty-bar button {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: none;
+    background: #ffe4ec;
+}
+
+.qty {
+    font-weight: bold;
+}
+
+/* BUTTON */
+.add-btn {
+    display: block;
+    margin: 20px auto;
+    background: #e91e63;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 25px;
+    border: none;
+}
+
+/* CART */
+.cart {
+    background: white;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+#summary {
+    color: #e91e63;
+    font-weight: bold;
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+    <div class="logo">Beauty Hub</div>
+</div>
+
+<!-- WHITE HEADING BAR -->
+<div class="heading-bar">
+    <h2>Glow Like Never Before ✨</h2>
+    <p>Your one-stop destination for beauty essentials</p>
+</div>
+
+<!-- OFFER BANNER -->
+<div class="offer-banner">
+    <div class="offer-text">
+        <h3>Buy products worth</h3>
+        <h1>₹1000/-</h1>
+        <p>Get a full size</p>
+        <h2>Demi-Matte Eyeliner</h2>
+        <small>*Offer Not Applicable on Minis and Kits</small>
+    </div>
+
+    <div class="offer-image">
+        <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348">
+    </div>
+</div>
+
+<!-- PRODUCTS -->
+<div class="products" id="products"></div>
+
+<button class="add-btn" onclick="addAllToCart()">Add to Cart</button>
+
+<!-- CART -->
+<div class="cart">
+    <h3>🛒 Cart</h3>
+    <div id="cartItems"></div>
+    <h4 id="summary"></h4>
+</div>
+
+<script>
+let products = [
+    {name: "HAIR MASK", price: 999, image: "https://images-static.nykaa.com/media/catalog/product/tr:w-220,h-220,cm-pad_resize/6/e/6ebb66dNYLOPROF00001_1.jpg"},
+    {name: "LIPSTICK", price: 799, image: "https://m.media-amazon.com/images/I/6149xdBcYgL.jpg"},
+    {name: "CONCEALER", price: 3499, image: "https://images.selfridges.com/is/image/selfridges/R04608819_3W_M?$PLP_ALL$"},
+    {name: "FACE CREAM", price: 499, image: "https://images.unsplash.com/photo-1556228720-195a672e8a03"},
+    {name: "PERFUME", price: 1299, image: "https://images.unsplash.com/photo-1585386959984-a4155224a1ad"}
+];
+
+let quantities = {};
+let cart = [];
+
+for (let i = 0; i < products.length; i++) {
+    quantities[products[i].name] = 0;
+}
+
+function showProducts() {
+    let html = "";
+
+    for (let i = 0; i < products.length; i++) {
+        let p = products[i];
+
+        html += `
+        <div class="product">
+            <img src="${p.image}">
+            <h4>${p.name}</h4>
+            <p>₹${p.price}</p>
+
+            <div class="qty-bar">
+                <button onclick="change('${p.name}', -1)">−</button>
+                <span class="qty" id="q-${p.name}">0</span>
+                <button onclick="change('${p.name}', 1)">+</button>
+            </div>
+        </div>
+        `;
+    }
+
+    document.getElementById("products").innerHTML = html;
+}
+
+function change(name, val) {
+    quantities[name] += val;
+    if (quantities[name] < 0) quantities[name] = 0;
+
+    document.getElementById("q-" + name).innerText = quantities[name];
+}
+
+function addAllToCart() {
+    cart = [];
+
+    for (let i = 0; i < products.length; i++) {
+        let p = products[i];
+        let qty = quantities[p.name];
+
+        if (qty > 0) {
+            cart.push({name: p.name, price: p.price, quantity: qty});
+        }
+    }
+
+    showCart();
+}
+
+function showCart() {
+    let text = "";
+    let total = 0;
+    let totalQty = 0;
+
+    for (let i = 0; i < cart.length; i++) {
+        let item = cart[i];
+        let itemTotal = item.price * item.quantity;
+
+        text += `${i+1}. ${item.name} - ₹${item.price} x ${item.quantity} = ₹${itemTotal} <br>`;
+
+        total += itemTotal;
+        totalQty += item.quantity;
+    }
+
+    let discount = total > 2000 ? total * 0.15 : 0;
+    let final = total - discount;
+
+    document.getElementById("cartItems").innerHTML = text;
+
+    document.getElementById("summary").innerHTML = `
+        Total Quantity: ${totalQty} <br>
+        Subtotal: ₹${total} <br>
+        Discount: ₹${discount.toFixed(2)} <br>
+        Final Total: ₹${final.toFixed(2)}
+    `;
+}
+
+showProducts();
+</script>
+
+</body>
+</html>
